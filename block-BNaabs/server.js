@@ -26,7 +26,6 @@ app.get('users/:username', (req, res) => {
   const username = req.params.username;
   res.send(username);
 });
-
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
