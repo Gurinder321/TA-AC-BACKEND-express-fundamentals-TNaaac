@@ -1,17 +1,20 @@
+// Requires
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const fs = require('fs');
 
-const PORT = 3000;
+const PORT = 4000;
 
+// Instantiate the app
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use('/public', express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
 app.use(logger('dev'));
+app.use(cookieParser());
 
 // Routes
 app.get('/', (req, res) => {
